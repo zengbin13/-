@@ -1,0 +1,29 @@
+<!-- pages/category/category.wxml -->
+<!-- 搜索框部分 -->
+<z-search-input></z-search-input>
+<view class="category-container">
+  <!-- 左侧菜单 -->
+  <scroll-view class="left-menu" scroll-x="false" scroll-y="{{true}}">
+    <view class="cate-item {{index === currentIndex ? 'active' : ''}}" bind:tap="handleCateClick" data-index="{{index}}" wx:for="{{leftMenuList}}" wx:key="*this">
+      {{item}}
+    </view>
+  </scroll-view>
+  <!-- 右侧内容 -->
+  <scroll-view class="right-content" scroll-x="false" scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+    <block wx:for="{{rightContent}}" wx:key="cat_id">
+      <view class="first-category">
+        <view class="cate-title">
+          <text class="delimiter">/</text>
+          <text class="title">{{item.cat_name}}</text>
+          <text class="delimiter">/</text>
+        </view>
+        <view class="second-category">
+          <navigator class="second-category-wrap" wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="secondItem">
+            <image src="{{secondItem.cat_icon}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
+            <text>{{secondItem.cat_name}}</text>
+          </navigator>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

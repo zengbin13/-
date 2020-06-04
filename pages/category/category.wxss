@@ -1,0 +1,68 @@
+/* pages/category/category.wxss */
+.category-container {
+  height: calc(100vh - 90rpx);
+  display: flex;
+}
+
+.category-container .left-menu {
+  height: 100%;
+  flex: 4;
+}
+
+.category-container .right-content {
+  height: 100%;
+  flex: 12;
+}
+
+.left-menu .cate-item {
+  background-color: rgba(233, 233, 233, 0.8);
+  text-align: center;
+  letter-spacing: 0.05rem;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.left-menu .cate-item.active {
+  box-sizing: content-box;
+  font-weight: bold;
+  background-color: #fff;
+  border-left: 8rpx solid #ff3f78;
+}
+
+.right-content .first-category .cate-title {
+  width: 100%;
+  margin: 30rpx 0 20rpx;
+  font-size: 36rpx;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.right-content .first-category .cate-title .delimiter {
+  opacity: 0.5;
+  padding: 0 20rpx;
+}
+
+.right-content .second-category {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-content .second-category .second-category-wrap {
+  width: 33.33%;
+  margin-bottom: 10rpx;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.right-content .second-category .second-category-wrap image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+
+.right-content .second-category .second-category-wrap text {
+  text-align: center;
+  display: block;
+  padding: 10rpx 0;
+}

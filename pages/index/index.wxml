@@ -1,0 +1,38 @@
+<!-- index.wxml -->
+<!-- 搜索框部分 -->
+<z-search-input></z-search-input>
+<!-- weiper 部分 -->
+<view class="index-swiper">
+  <swiper autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}" indicator-color="rgba(255, 255, 255, .5)" indicator-active-color="#fff">
+    <swiper-item wx:for="{{swiperList}}" wx:key="*this">
+      <navigator url="{{item.navigator_url}}">
+        <image mode="widthFix" src="{{item.image_src}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 分类导航 部分 -->
+<view class="navMenu">
+  <block wx:for="{{navMenu}}" wx:key="name">
+    <navigator open-type="{{item.open_type}}" url="{{item.navigator_url}}">
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+  </block>
+</view>
+<!-- 楼层展示 部分 -->
+<view class="floor-list">
+  <block wx:for="{{floorData}}" wx:for-index="index1" wx:key="floor_title">
+    <!-- 类别标题 -->
+    <view class="floor">
+      <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
+    </view>
+    <!-- 展示内容 -->
+    <view class="product">
+      <block wx:for="{{item.product_list}}" wx:for-item="product" wx:for-index="index2" wx:key="name">
+        <navigator url="{{product.navigator_url}}" open-type="{{product.open_type}}">
+          <image src="{{product.image_src}}" />
+        </navigator>
+      </block>
+    </view>
+  </block>
+</view>

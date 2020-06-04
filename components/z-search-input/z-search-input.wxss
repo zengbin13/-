@@ -1,0 +1,19 @@
+/* components/z-serach-input/z-search-input.wxss */
+.search-input {
+  height: 90rpx;
+  padding: 0 10px;
+  display: flex;
+  background-color: var(--themeColor);
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input navigator {
+  height: 60rpx;
+  width: 100%;
+  line-height: 60rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  background-color: #fff;
+  color: #666;
+}
