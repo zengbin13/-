@@ -1,2 +1,20 @@
-<!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<!-- pages/goods_list/goods_list.wxml -->
+<!-- 搜索框部分 -->
+<z-search-input></z-search-input>
+<z-tab-bar tabList="{{tabList}}" bind:tabItemChange="handleTabItemChange">
+  <block wx:if="{{tabIndex === 0}}">
+    <block wx:for="{{goodsList}}" wx:key="cat_id">
+      <z-goods-item goodsItem="{{item}}"></z-goods-item>
+    </block>
+  </block>
+  <block wx:elif="{{tabIndex === 1}}">
+    <block wx:for="{{goodsList}}" wx:key="cat_id">
+      <z-goods-item goodsItem="{{item}}"></z-goods-item>
+    </block>
+  </block>
+  <block wx:else="{{tabIndex === 2}}">
+    <block wx:for="{{goodsList}}" wx:key="cat_id">
+      <z-goods-item goodsItem="{{item}}"></z-goods-item>
+    </block>
+  </block>
+</z-tab-bar>

@@ -1,5 +1,5 @@
 // pages/category/category.js
-import { request } from "../../utils/request";
+import { request } from '../../utils/request';
 Page({
   /**
    * 页面的初始数据
@@ -24,7 +24,7 @@ Page({
       2.1 有，使用旧数据
       2.2 没有，发生请求获取数据，并缓存数据
     */
-    let categotyData = wx.getStorageSync("categotyData");
+    let categotyData = wx.getStorageSync('categotyData');
     if (!categotyData) {
       //不存在数据
       this.getCategoryDataData();
@@ -40,25 +40,40 @@ Page({
     }
   },
   /************ api 相关方法 ************/
-  getCategoryDataData() {
-    request({
-      url: "/categories",
-    }).then((res) => {
-      //将数据保存在data中
-      this.categotyData = res.data.message;
-      this.handleLoadData();
-      //将数据缓存到本地存储
-      wx.setStorageSync("categotyData", {
-        time: Date.now(),
-        data: this.categotyData,
-      });
+
+  //ES6 异步请求 promise
+  // getCategoryDataData() {
+  //   request({
+  //     url: "/categories",
+  //   }).then((res) => {
+  //     //将数据保存在data中
+  //     this.categotyData = res.data.message;
+  //     this.handleLoadData();
+  //     //将数据缓存到本地存储
+  //     wx.setStorageSync("categotyData", {
+  //       time: Date.now(),
+  //       data: this.categotyData,
+  //     });
+  //   });
+  // },
+
+  //ES7 异步请求 async await
+  async getCategoryDataData() {
+    const res = await request({ url: '/categories' });
+    // 将数据保存在data中
+    this.categotyData = res.data.message;
+    this.handleLoadData();
+    //将数据缓存到本地存储
+    wx.setStorageSync('categotyData', {
+      time: Date.now(),
+      data: this.categotyData,
     });
   },
   /************ 业务逻辑 相关方法 ************/
   //设置保存渲染页面的初始数据
   handleLoadData() {
     this.setData({
-      leftMenuList: this.categotyData.map((item) => {
+      leftMenuList: this.categotyData.map(item => {
         return item.cat_name;
       }),
       rightContent: this.categotyData[0].children,

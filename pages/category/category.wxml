@@ -18,7 +18,12 @@
           <text class="delimiter">/</text>
         </view>
         <view class="second-category">
-          <navigator class="second-category-wrap" wx:for="{{item.children}}" wx:key="cat_id" wx:for-item="secondItem">
+          <navigator 
+          class="second-category-wrap" 
+          url="/pages/goods_list/goods_list?cid={{secondItem.cat_id}}"
+          wx:for="{{item.children}}" 
+          wx:key="cat_id" 
+          wx:for-item="secondItem">
             <image src="{{secondItem.cat_icon}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" />
             <text>{{secondItem.cat_name}}</text>
           </navigator>

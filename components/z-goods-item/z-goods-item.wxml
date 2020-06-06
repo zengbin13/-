@@ -1,0 +1,10 @@
+<!-- components/z-goods-item/z-goods-item.wxml -->
+<view class="goods-item">
+  <view class="goods-item-img">
+    <image src="{{goodsItem.src}}" mode="widthFix" />
+  </view>
+  <view class="goods-item-content">
+    <view class="content">{{goodsItem.content}}</view>
+    <view class="price">￥{{goodsItem.price}}</view>
+  </view>
+</view>

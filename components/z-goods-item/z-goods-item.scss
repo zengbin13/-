@@ -1,0 +1,31 @@
+/* components/z-goods-item/z-goods-item.wxss */
+.goods-item {
+  display: flex;
+  height: 240rpx;
+  .goods-item-img {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    image {
+      width: 200rpx;
+    }
+  }
+  .goods-item-content {
+    flex: 3;
+    padding: 40rpx 20rpx 30rpx;
+    position: relative;
+    .content {
+      height: 120rpx;
+      line-height: 40rpx;
+      overflow: hidden;
+    }
+    .price {
+      position: absolute;
+      line-height: 32rpx;
+      font-size: 32rpx;
+      color: #ff3f78;
+      bottom: 30rpx;
+    }
+  }
+}
