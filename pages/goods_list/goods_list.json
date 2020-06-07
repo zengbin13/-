@@ -2,5 +2,6 @@
   "usingComponents": {
     "z-tab-bar": "/components/z-tab-bar/z-tab-bar",
     "z-goods-item": "/components/z-goods-item/z-goods-item"
-  }
+  },
+  "enablePullDownRefresh": true
 }

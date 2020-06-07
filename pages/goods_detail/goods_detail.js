@@ -1,66 +1,45 @@
 // pages/goods_detail/goods_detail.js
-Page({
+import { request } from '../../utils/request.js';
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-
+    goodsData: {},
+    swiperData: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getGoodsDetail(options.goods_id);
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  /************ api 相关方法 ************/
+  async getGoodsDetail(id) {
+    let res = await request({
+      url: '/goods/detail',
+      data: {
+        goods_id: id,
+      },
+    });
+    this.setData({
+      goodsData: res.data.message,
+      swiperData: res.data.message.pics,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  /************ 业务逻辑 相关方法 ************/
+  //点击图片放大预览
+  handlePreviewImg(e) {
+    const imgs = this.data.swiperData.map(item => {
+      return item.pics_mid;
+    });
+    const index = e.currentTarget.dataset.index;
+    console.log(e.currentTarget.dataset.index);
+    wx.previewImage({
+      current: imgs[index],
+      urls: imgs,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

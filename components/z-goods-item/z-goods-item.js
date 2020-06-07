@@ -10,6 +10,7 @@ Component({
         src: 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg',
         content: '创维.PPTV W42S 42英寸 全高清智能网络LED液晶平板电视',
         price: '	1799',
+        url: '',
       },
     },
   },
