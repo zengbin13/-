@@ -1,66 +1,54 @@
 // pages/cart/cart.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    address: null,
+    cartList: [],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  /****业务逻辑 */
+  handleAddress() {
+    let scopeAddress;
+    // 获取用户的当前设置。返回值中只会出现小程序已经向用户请求过的权限
+    wx.getSetting({
+      success: result1 => {
+        scopeAddress = result1.authSetting['scope.address'];
+        if (scopeAddress === false) {
+          // 设置界面只会出现小程序已经向用户请求过的权限
+          wx.openSetting();
+        }
+        wx.chooseAddress({
+          success: result2 => {
+            wx.setStorageSync('address', result2);
+          },
+        });
+      },
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  saveCartData() {
+    let cartData = wx.getStorageSync('cart');
+    this.setData({
+      cartList: cartData,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getAddressData() {
+    let address = wx.getStorageSync('address');
+    this.setData({
+      address: address,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleCheckChange(e) {
+    console.log(e);
+    console.log('iii');
   },
-
   /**
-   * 生命周期函数--监听页面卸载
+   * 生命周期函数
    */
-  onUnload: function () {
-
+  onLoad() {
+    this.getAddressData();
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onShow(options) {
+    this.saveCartData();
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

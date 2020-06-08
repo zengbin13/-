@@ -1,4 +1,8 @@
 /* pages/goods_detail/goods_detail.wxss */
+page {
+  margin-bottom: 88rpx;
+}
+
 .detail-swiper swiper {
   height: 320px;
 }
@@ -62,4 +66,56 @@
   font-weight: 600;
   padding: 20rpx;
   letter-spacing: 0.05em;
+}
+
+.goods-action {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: 88rpx;
+  text-align: center;
+}
+
+.goods-action .goods-action-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.goods-action .goods-action-item button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.goods-action .goods-action-item .iconfont {
+  font-size: 34rpx;
+}
+
+.goods-action .contact,
+.goods-action .share,
+.goods-action .cart {
+  flex: 1;
+  background-color: #fff;
+}
+
+.goods-action .add-cart,
+.goods-action .buy {
+  flex: 2;
+  color: #fff;
+}
+
+.goods-action .add-cart {
+  background-color: #f5c02f;
+}
+
+.goods-action .buy {
+  background-color: var(--themeColor);
 }

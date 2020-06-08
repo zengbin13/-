@@ -23,3 +23,20 @@ page {
 iamge {
   width: 100%;
 }
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix {
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    clear: both;
+  }
+}

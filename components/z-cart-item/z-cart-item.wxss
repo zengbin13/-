@@ -1,0 +1,75 @@
+/* components/z-cart-item/z-cart-item.wxss */
+.cart-item {
+  padding: 20rpx;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+}
+
+.cart-item .checkbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item .image {
+  flex: 4;
+  padding: 0 20rpx;
+}
+
+.cart-item .image image {
+  width: 100%;
+}
+
+.cart-item .info {
+  flex: 7;
+}
+
+.info .text {
+  font-size: 32rpx;
+  line-height: 40rpx;
+  height: 80rpx;
+  margin: 40rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.info .price-wrap {
+  font-size: 36rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info .price-wrap .price {
+  color: var(--themeColor);
+  overflow: hidden;
+}
+
+.info .price-wrap .tool {
+  width: 180rpx;
+  display: flex;
+  border: 1px solid #222;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info .price-wrap .tool .less,
+.info .price-wrap .tool .plus {
+  display: inline-block;
+  text-align: center;
+  line-height: 45rpx;
+  width: 45rpx;
+  height: 45rpx;
+  color: #222;
+}
+
+.info .price-wrap .tool .less {
+  border-right: 1px solid #222;
+}
+
+.info .price-wrap .tool .plus {
+  border-left: 1px solid #222;
+}

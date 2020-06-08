@@ -1,0 +1,24 @@
+<!-- components/z-cart-item/z-cart-item.wxml -->
+<view class="cart-item">
+  <view class="checkbox">
+    <checkbox-group bindchange="handleCheckChange" data-id="{{cartItem.goods_id}}">
+      <checkbox color="#ff3f78" checked="{{cartItem.goods_checked}}"></checkbox>
+    </checkbox-group>
+  </view>
+  <view class="image">
+    <navigator url="{{'pages/goods_detail/goods_detail' + cartItem.goods_id}}">
+      <image src="{{cartItem.goods_img}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+  <view class="info">
+    <view class="text">{{cartItem.goods_name}}</view>
+    <view class="price-wrap clearfix">
+      <text class="price">￥ {{cartItem.goods_price}}</text>
+      <view class="tool pull-right">
+        <text class="less">-</text>
+        {{ cartItem.goods_count }}
+        <text class="plus">+</text>
+      </view>
+    </view>
+  </view>
+</view>

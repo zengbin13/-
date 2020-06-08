@@ -25,3 +25,22 @@
     <rich-text nodes="{{goodsData.goods_introduce}}"></rich-text>
   </view>
 </view>
+<!-- 购买商品 -->
+<view class="goods-action">
+  <view class="contact goods-action-item">
+    <view class="iconfont icon-kefu"></view>
+    客服
+    <button open-type="contact" ></button>
+  </view>
+  <view class="share goods-action-item">
+    <view class="iconfont icon-sharenetworkconn"></view>
+    分享
+    <button open-type="share"></button>
+  </view>
+  <navigator class="cart goods-action-item" url="/pages/cart/cart" open-type="switchTab">
+    <view class="iconfont icon-cart1"></view>
+    购物车
+  </navigator>
+  <view class="add-cart goods-action-item" bind:tap="handleAddCart">加入购物车</view>
+  <view class="buy goods-action-item">立即购买</view>
+</view>

@@ -38,6 +38,7 @@ Page({
       //没有更多数据
       wx.showToast({
         title: '没有更多数据',
+        icon: 'none',
         duration: 1500,
       });
     }

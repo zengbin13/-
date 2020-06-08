@@ -1,4 +1,7 @@
 /* pages/goods_detail/goods_detail.wxss */
+page {
+  margin-bottom: 88rpx;
+}
 .detail-swiper {
   swiper {
     height: 320px;
@@ -9,6 +12,7 @@
     margin: 0 auto;
   }
 }
+//商品信息
 .info {
   &::after {
     content: '';
@@ -54,6 +58,7 @@
     }
   }
 }
+//图片
 .image-info {
   .title {
     font-size: 32rpx;
@@ -61,5 +66,50 @@
     font-weight: 600;
     padding: 20rpx;
     letter-spacing: 0.05em;
+  }
+}
+// 购物车
+.goods-action {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100vw;
+  height: 88rpx;
+  text-align: center;
+  .goods-action-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    button {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+    .iconfont {
+      font-size: 34rpx;
+    }
+  }
+  .contact,
+  .share,
+  .cart {
+    flex: 1;
+    background-color: #fff;
+  }
+  .add-cart,
+  .buy {
+    flex: 2;
+    color: #fff;
+  }
+  .add-cart {
+    background-color: rgb(245, 192, 47);
+  }
+  .buy {
+    background-color: var(--themeColor);
   }
 }
