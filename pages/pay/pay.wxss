@@ -1,1 +1,41 @@
 /* pages/pay/pay.wxss */
+.address {
+  padding: 30rpx;
+  line-height: 50rpx;
+}
+
+.footer-tool {
+  border-top: 1px solid #dbdbdb;
+  background-color: #fff;
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer-tool .total-price-wrap {
+  flex: 8;
+  margin-right: 20rpx;
+}
+
+.footer-tool .total-price-wrap .text {
+  display: inline-block;
+  font-size: 32rpx;
+  color: var(--themeColor);
+}
+
+.footer-tool .total-price-wrap view,
+.footer-tool .total-price-wrap .text {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.footer-tool .order-pay {
+  flex: 3;
+  font-size: 32rpx;
+  background-color: var(--themeColor);
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}

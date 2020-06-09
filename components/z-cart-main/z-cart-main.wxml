@@ -1,0 +1,8 @@
+<!-- components/z-cart-main/z-cart-main.wxml -->
+<view class="cart-content">
+  <view class="title">
+    <text class="iconfont icon-cart-active-copy"></text>
+    购物车
+  </view>
+  <slot></slot>
+</view>

@@ -8,10 +8,6 @@ page {
   line-height: 50rpx;
 }
 
-.address .iconfont {
-  color: #666;
-}
-
 .cart-content .title {
   font-size: 38rpx;
   color: #ff3f78;
@@ -23,7 +19,7 @@ page {
 
 .cart-content .title::after {
   content: '';
-  height: 1rpx;
+  height: 2rpx;
   position: absolute;
   right: 0;
   top: 24rpx;
@@ -33,7 +29,7 @@ page {
 
 .cart-content .title::before {
   content: '';
-  height: 1rpx;
+  height: 2rpx;
   position: absolute;
   width: 50rpx;
   top: 24rpx;
@@ -48,8 +44,6 @@ page {
 .footer-tool {
   border-top: 1px solid #dbdbdb;
   background-color: #fff;
-  box-sizing: content-box;
-  box-sizing: border-box;
   width: 100vw;
   height: 80rpx;
   display: flex;
@@ -88,4 +82,24 @@ page {
   color: #fff;
   text-align: center;
   line-height: 80rpx;
+}
+
+.cart-empty {
+  text-align: center;
+}
+
+.cart-empty image {
+  display: inline-block;
+  margin: 40rpx auto;
+}
+
+.cart-empty .text,
+.cart-empty navigator {
+  font-size: 36rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+}
+
+.cart-empty navigator {
+  color: var(--themeColor);
 }

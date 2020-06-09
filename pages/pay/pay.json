@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "z-cart-address": "/components/z-cart-address/z-cart-address",
+    "z-cart-main": "/components/z-cart-main/z-cart-main",
+    "z-pay-item": "/components/z-pay-item/z-pay-item"
+  },
+  "navigationBarTitleText": "商品支付"
+
 }

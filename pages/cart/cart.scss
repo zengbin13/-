@@ -5,9 +5,6 @@ page {
 .address {
   padding: 30rpx;
   line-height: 50rpx;
-  .iconfont {
-    color: #666;
-  }
 }
 .cart-content {
   .title {
@@ -19,7 +16,7 @@ page {
     line-height: 40rpx;
     &::after {
       content: '';
-      height: 1rpx;
+      height: 2rpx;
       position: absolute;
       right: 0;
       top: 24rpx;
@@ -28,7 +25,7 @@ page {
     }
     &::before {
       content: '';
-      height: 1rpx;
+      height: 2rpx;
       position: absolute;
       width: 50rpx;
       top: 24rpx;
@@ -43,8 +40,6 @@ page {
 .footer-tool {
   border-top: 1px solid rgb(219, 219, 219);
   background-color: #fff;
-  box-sizing: content-box;
-  box-sizing: border-box;
   width: 100vw;
   height: 80rpx;
   display: flex;
@@ -77,5 +72,21 @@ page {
     color: #fff;
     text-align: center;
     line-height: 80rpx;
+  }
+}
+.cart-empty {
+  text-align: center;
+  image {
+    display: inline-block;
+    margin: 40rpx auto;
+  }
+  .text,
+  navigator {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    height: 50rpx;
+  }
+  navigator {
+    color: var(--themeColor);
   }
 }

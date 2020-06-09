@@ -5,13 +5,6 @@
   display: flex;
 }
 
-.cart-item .checkbox {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .cart-item .image {
   flex: 4;
   padding: 0 20rpx;
@@ -46,23 +39,4 @@
 .info .price-wrap .price {
   color: var(--themeColor);
   overflow: hidden;
-}
-
-.info .price-wrap .tool {
-  width: 170rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info .price-wrap .tool .less,
-.info .price-wrap .tool .plus {
-  display: inline-block;
-  text-align: center;
-  line-height: 45rpx;
-  width: 45rpx;
-  height: 45rpx;
-  color: #666;
-  border: 1px solid #222;
-  border-radius: 50%;
 }

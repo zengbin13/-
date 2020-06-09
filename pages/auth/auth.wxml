@@ -1,2 +1,4 @@
-<!--pages/auth/auth.wxml-->
-<text>pages/auth/auth.wxml</text>
+<!-- pages/auth/auth.wxml -->
+<button size="default" type="default" plain="default" open-type="getUserInfo" bind:getuserinfo="handleUserInfo">
+  获取授权
+</button>

@@ -3,12 +3,6 @@
   padding: 20rpx;
   border-bottom: 1px solid rgb(219, 219, 219);
   display: flex;
-  .checkbox {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .image {
     flex: 4;
     padding: 0 20rpx;
@@ -39,23 +33,6 @@
     .price {
       color: var(--themeColor);
       overflow: hidden;
-    }
-    .tool {
-      width: 170rpx;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .less,
-      .plus {
-        display: inline-block;
-        text-align: center;
-        line-height: 45rpx;
-        width: 45rpx;
-        height: 45rpx;
-        color: #666;
-        border: 1px solid #222;
-        border-radius: 50%;
-      }
     }
   }
 }

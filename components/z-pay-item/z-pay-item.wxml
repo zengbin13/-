@@ -1,0 +1,16 @@
+<view class="cart-item">
+  <view class="image">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{cartItem.goods_id}}" hover-class="none">
+      <image src="{{cartItem.goods_img}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+  <view class="info">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{cartItem.goods_id}}" hover-class="none">
+      <view class="text">{{cartItem.goods_name}}</view>
+    </navigator>
+    <view class="price-wrap clearfix">
+      <text class="price">￥ {{cartItem.goods_price}}</text>
+      <view class="tool pull-right">X {{cartItem.goods_count}}</view>
+    </view>
+  </view>
+</view>

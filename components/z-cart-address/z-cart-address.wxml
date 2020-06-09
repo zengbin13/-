@@ -1,0 +1,10 @@
+<!-- components/z-cart-address/z-cart-address.wxml -->
+<view class="name clearfix">
+  <text class="iconfont icon-UserSettings"></text>
+  <text decode="{{true}}">&nbsp;收货人: {{address.userName}}</text>
+  <text class="pull-right">{{address.telNumber}}</text>
+</view>
+<view class="address-info">
+  <text class="iconfont icon-location"></text>
+  {{address.provinceName + address.cityName +address.countyName +address.detailInfo }}
+</view>

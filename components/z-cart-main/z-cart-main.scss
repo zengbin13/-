@@ -1,0 +1,32 @@
+/* components/z-cart-main/z-cart-main.wxss */
+.cart-content {
+  .title {
+    font-size: 38rpx;
+    color: #ff3f78;
+    padding-left: 78rpx;
+    position: relative;
+    height: 40rpx;
+    line-height: 40rpx;
+    &::after {
+      content: '';
+      height: 2rpx;
+      position: absolute;
+      right: 0;
+      top: 24rpx;
+      left: 262rpx;
+      background-color: #ccc;
+    }
+    &::before {
+      content: '';
+      height: 2rpx;
+      position: absolute;
+      width: 50rpx;
+      top: 24rpx;
+      left: 0rpx;
+      background-color: #ccc;
+    }
+    text {
+      font-size: 42rpx;
+    }
+  }
+}

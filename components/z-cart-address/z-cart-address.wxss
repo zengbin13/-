@@ -1,0 +1,4 @@
+/* components/z-cart-address/z-cart-address.wxss */
+.iconfont {
+  color: #666;
+}

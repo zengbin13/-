@@ -1,10 +1,12 @@
 const baseURL = 'https://api-hmugo-web.itheima.net/api/public/v1';
 let ajaxTimes = 0;
 export function request(options) {
+  //请求接口显示加载中
   wx.showLoading({
     title: '加载中',
     mask: true,
     complete: () => {
+      //记录请求次数
       ajaxTimes++;
     },
   });

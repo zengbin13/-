@@ -33,7 +33,6 @@ Page({
         goods_name: goodsData.goods_name,
         goods_introduce: goodsData.goods_introduce,
         goods_img: goodsData.goods_big_logo,
-        goods_checked: false,
       },
       swiperData: res.data.message.pics,
     });
@@ -64,6 +63,7 @@ Page({
     if (index === -1) {
       //不存在
       this.goodsData.goods_count = 1;
+      this.goodsData.goods_checked = true;
       cart.push(this.goodsData);
     } else {
       //存在

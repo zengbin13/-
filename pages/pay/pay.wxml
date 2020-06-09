@@ -1,2 +1,28 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<!-- pages/pay/pay.wxml -->
+<!-- 地址部分 -->
+<view class="address">
+  <z-cart-address address="{{address}}"></z-cart-address>
+</view>
+<z-cart-main>
+  <!-- 待支付商品 -->
+  <view class="pay-main">
+    <block wx:for="{{payList}}" wx:key="goods_id">
+      <z-pay-item cartItem="{{item}}"></z-pay-item>
+    </block>
+  </view>
+</z-cart-main>
+<!-- 支付 -->
+<view class="footer-tool">
+  <!-- 价格 -->
+  <view class="total-price-wrap clearfix">
+    <view class="pull-right">
+      <view class="total-price">
+        合计:
+        <text class="text">￥ {{totalPrice}}</text>
+      </view>
+      <view class="pull-right">包含运费</view>
+    </view>
+  </view>
+  <!-- 结算 -->
+  <view class="order-pay" bind:tap="handlePay">支付({{totalCount}})</view>
+</view>

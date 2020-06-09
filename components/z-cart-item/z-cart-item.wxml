@@ -6,18 +6,20 @@
     </checkbox-group>
   </view>
   <view class="image">
-    <navigator url="{{'pages/goods_detail/goods_detail' + cartItem.goods_id}}">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{cartItem.goods_id}}" hover-class="none">
       <image src="{{cartItem.goods_img}}" mode="widthFix"></image>
     </navigator>
   </view>
   <view class="info">
-    <view class="text">{{cartItem.goods_name}}</view>
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{cartItem.goods_id}}" hover-class="none">
+      <view class="text">{{cartItem.goods_name}}</view>
+    </navigator>
     <view class="price-wrap clearfix">
       <text class="price">￥ {{cartItem.goods_price}}</text>
       <view class="tool pull-right">
-        <text class="less">-</text>
+        <text class="less" bind:tap="handleChangeCount" data-count="{{-1}}" data-id="{{cartItem.goods_id}}">-</text>
         {{ cartItem.goods_count }}
-        <text class="plus">+</text>
+        <text class="plus" bind:tap="handleChangeCount" data-count="{{1}}" data-id="{{cartItem.goods_id}}">+</text>
       </view>
     </view>
   </view>

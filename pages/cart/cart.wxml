@@ -5,58 +5,36 @@
     <button bind:tap="handleAddress">+ 收货地址</button>
   </view>
   <view class="address-content" wx:else>
-    <view class="name clearfix">
-      <text class="iconfont icon-UserSettings"></text>
-      <text>收货人: {{address.userName}}</text>
-      <text class="pull-right">{{address.telNumber}}</text>
-    </view>
-    <view class="address-info">
-      <text class="iconfont icon-location"></text>
-      {{address.provinceName + address.cityName +address.countyName +address.detailInfo }}
-    </view>
+    <z-cart-address address="{{address}}"></z-cart-address>
   </view>
 </view>
 <!-- 购物车内容 -->
-<view class="cart-content">
-  <view class="title">
-    <text class="iconfont icon-cart-active-copy"></text>
-    购物车
-  </view>
+<z-cart-main>
   <view class="cart-main">
-    <block wx:for="{{cartList}}" wx:key="*this">
-      <z-cart-item cartItem="{{item}}" bind:checkchange="handleCheckChange"></z-cart-item>
+    <block wx:if="{{cartList.length}}">
+      <block wx:for="{{cartList}}" wx:key="goods_id">
+        <z-cart-item cartItem="{{item}}" bind:checkchange="handleCheckItem" bind:countchange="handleCountChange"></z-cart-item>
+      </block>
     </block>
-    <!-- <view class="cart-item">
-      <view class="checkbox">
-        <checkbox-group>
-          <checkbox value="1" color="#ff3f78"></checkbox>
-        </checkbox-group>
-      </view>
-      <view class="image">
-        <navigator url="">
-          <image src="http://image1.suning.cn/uimg/b2c/newcatentries/0070087466-000000000132797488_1_400x400.jpg" mode="widthFix"></image>
-        </navigator>
-      </view>
-      <view class="info">
-        <view class="text">长虹(CHANGHONG) 32M1 32英寸 蓝光液晶平板电视（珍视版）</view>
-        <view class="price-wrap clearfix">
-          <text class="price">￥ 999</text>
-          <view class="tool pull-right">
-            <text class="less">-</text>
-            {{ 1 }}
-            <text class="plus">+</text>
-          </view>
+    <block wx:else>
+      <view class="cart-empty">
+        <image src="../../assets/image/empty.gif" mode="widthFix" />
+        <view class="text">
+          购物车空空如也~~
+          <navigator url="/pages/category/category" open-type="switchTab" hover-class="none">
+            去逛逛
+          </navigator>
         </view>
       </view>
-    </view> -->
+    </block>
   </view>
-</view>
+</z-cart-main>
 <!-- 底部工具栏 -->
-<view class="footer-tool">
+<view class="footer-tool" wx:if="{{cartList.length}}">
   <!-- 全选 -->
   <view class="checkbox-all">
     <label>
-      <checkbox color="#ff3f78"></checkbox>
+      <checkbox color="#ff3f78" bind:tap="handleAllSelect" checked="{{allSelect}}"></checkbox>
       <text class="checkbox">全选</text>
     </label>
   </view>
@@ -65,11 +43,11 @@
     <view class="pull-right">
       <view class="total-price">
         合计:
-        <text class="text">￥ 999</text>
+        <text class="text">￥ {{totalPrice}}</text>
       </view>
       <view class="pull-right">包含运费</view>
     </view>
   </view>
   <!-- 结算 -->
-  <view class="order-pay">结算(2)</view>
+  <view class="order-pay" bind:tap="handlePay">结算({{totalCount}})</view>
 </view>
