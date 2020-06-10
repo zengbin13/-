@@ -1,1 +1,110 @@
 /* pages/profile/profile.wxss */
+page {
+  background-color: #edece8;
+}
+
+.margin-30 {
+  margin-bottom: 30rpx;
+}
+
+.user-info-wrap .img-wrap {
+  height: 40vh;
+  background-color: #e2d7da;
+}
+
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-wrap .bg-img {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+
+.img-wrap .user-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-wrap .user-info .avator {
+  width: 150rpx;
+  border-radius: 50%;
+  box-shadow: 2px 2px 12px 0 rgba(255, 255, 255, 0.404);
+}
+
+.img-wrap .user-info .user-name {
+  margin-top: 20rpx;
+  color: #fff;
+  font-size: 32rpx;
+  letter-spacing: 0.1em;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.user-content {
+  position: relative;
+}
+
+.user-content .user-main {
+  position: absolute;
+  top: -50rpx;
+  left: 5vw;
+  width: 90vw;
+}
+
+.user-content .user-item {
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-bottom: 2rpx;
+  font-size: 32rpx;
+  padding: 0 20rpx;
+  color: #666;
+}
+
+.user-content .history-wrap {
+  display: flex;
+  background-color: #fff;
+}
+
+.user-content .history-wrap navigator {
+  padding: 10rpx 0;
+  flex: 1;
+  text-align: center;
+}
+
+.user-content .history-wrap .his-num {
+  color: var(--themeColor);
+}
+
+.user-content .history-wrap .his-name {
+  line-height: 1.5;
+}
+
+.user-content .orders-wrap {
+  display: flex;
+  background-color: #fff;
+}
+
+.user-content .orders-wrap navigator {
+  padding: 10rpx 0;
+  flex: 1;
+  text-align: center;
+}
+
+.user-content .orders-wrap .iconfont {
+  font-size: 42rpx;
+  color: var(--themeColor);
+}
+
+.user-content .orders-wrap .orders-name {
+  line-height: 1.5;
+}

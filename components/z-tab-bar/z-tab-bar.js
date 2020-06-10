@@ -8,6 +8,9 @@ Component({
       type: Array,
       value: ['数据', '数据', '数据'],
     },
+    currentIndex: {
+      type: Number,
+    },
   },
 
   /**

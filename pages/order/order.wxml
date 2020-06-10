@@ -1,2 +1,23 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<!-- pages/order/order.wxml -->
+<z-tab-bar tabList="{{tabList}}" bind:tabItemChange="handleTabItemChange" currentIndex='{{tabIndex}}'>
+  <block wx:for="{{ordersData}}" wx:key="order_id">
+    <view class="order-item">
+      <view class="num">
+        <text class="title">订单编号:</text>
+        <text class="pull-right">{{item.order_number}}</text>
+      </view>
+      <view class="price">
+        <text class="title">订单价格:</text>
+        <text class="pull-right text-price">￥ {{item.order_price}}</text>
+      </view>
+      <view class="address">
+        <text class="title">订单地址:</text>
+        <text class="pull-right">{{item.consignee_addr}}</text>
+      </view>
+      <view class="num">
+        <text class="title">订单日期:</text>
+        <text class="pull-right">{{item.create_time}}</text>
+      </view>
+    </view>
+  </block>
+</z-tab-bar>

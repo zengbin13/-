@@ -23,6 +23,8 @@ Page({
         await openSetting();
       }
       let address = await chooseAddress();
+      address.all =
+        address.provinceName + address.cityName + address.countyName + address.detailInfo;
       // 5 存入到缓存中
       wx.setStorageSync('address', address);
     } catch (error) {

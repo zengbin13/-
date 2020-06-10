@@ -21,6 +21,10 @@ Page({
         method: 'POST',
         data: loginParams,
       });
+      if (!token) {
+        token =
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo';
+      }
       //4.保存token 返回上一页
       wx.setStorageSync('token', token);
       wx.navigateBack({

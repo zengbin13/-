@@ -15,7 +15,7 @@ export function request(options) {
       url: baseURL + options.url,
       data: options.data || {},
       method: options.method || 'GET',
-      header: { 'content-type': 'application/json' },
+      header: options.header,
       dataType: 'json',
       responseType: 'text',
       success: resolve,

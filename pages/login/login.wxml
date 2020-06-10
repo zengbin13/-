@@ -1,2 +1,4 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<!-- pages/login/login.wxml -->
+<button size="default" type="default" plain="default" open-type="getUserInfo" bind:getuserinfo="handleUserInfo">
+  确认登录
+</button>
