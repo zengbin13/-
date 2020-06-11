@@ -10,7 +10,9 @@
     </navigator>
     <view class="price-wrap clearfix">
       <text class="price">￥ {{cartItem.goods_price}}</text>
-      <view class="tool pull-right">X {{cartItem.goods_count}}</view>
+      <view class="tool pull-right" wx:if="{{cartItem.goods_count}}">
+        X {{cartItem.goods_count}}
+      </view>
     </view>
   </view>
 </view>

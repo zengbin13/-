@@ -1,2 +1,5 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<!-- pages/search/search.wxml -->
+<view class="search">
+  <input placeholder="请输入你想要的商品" confirm-type="search" focus="{{true}}" bindinput="handleInput"></input>
+  <view class="btn">取消</view>
+</view>

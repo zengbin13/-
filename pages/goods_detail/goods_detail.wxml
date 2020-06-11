@@ -12,7 +12,7 @@
   <view class="price">￥ {{goodsData.goods_price}}</view>
   <view class="desc">
     <view class="title">{{goodsData.goods_name}}</view>
-    <view class="collect">
+    <view class="collect {{isCollect ? 'collect-active' : ''}}" bind:tap="handleClickCollect">
       <text class="iconfont icon-shoucang"></text>
       <view class="text">收藏</view>
     </view>
@@ -30,7 +30,7 @@
   <view class="contact goods-action-item">
     <view class="iconfont icon-kefu"></view>
     客服
-    <button open-type="contact" ></button>
+    <button open-type="contact"></button>
   </view>
   <view class="share goods-action-item">
     <view class="iconfont icon-sharenetworkconn"></view>

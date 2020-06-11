@@ -119,6 +119,19 @@
 					"pathName": "pages/order/order",
 					"query": "type=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/collect/collect",
+					"pathName": "pages/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
+					"scene": null
 				}
 			]
 		}

@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "z-pay-item": "/components/z-pay-item/z-pay-item",
+    "z-tab-bar": "/components/z-tab-bar/z-tab-bar"
+  },
+  "navigationBarTitleText": "收藏"
 }

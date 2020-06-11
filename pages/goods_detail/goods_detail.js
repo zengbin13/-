@@ -1,5 +1,6 @@
 // pages/goods_detail/goods_detail.js
 import { request } from '../../utils/request.js';
+import { showToast } from '../../utils/asyncWx';
 
 Page({
   /**
@@ -8,13 +9,18 @@ Page({
   data: {
     goodsData: {},
     swiperData: [],
+    isCollect: false,
   },
   goodsData: {},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.getGoodsDetail(options.goods_id);
+  onShow: function () {
+    //判断商品是否存在收藏缓存
+    let curPages = getCurrentPages();
+    let { goods_id } = curPages[curPages.length - 1].options;
+    this.getGoodsDetail(goods_id);
+    this.handleCollectGoods(goods_id);
   },
   /************ api 相关方法 ************/
   async getGoodsDetail(id) {
@@ -25,7 +31,6 @@ Page({
       },
     });
     let goodsData = res.data.message;
-    console.log(goodsData.goods_big_logo);
     this.setData({
       goodsData: {
         goods_id: goodsData.goods_id,
@@ -76,6 +81,38 @@ Page({
       icon: 'success',
       duration: 1500,
       mask: true,
+    });
+  },
+  handleClickCollect(e) {
+    //样式处理
+    this.setData({
+      isCollect: !this.data.isCollect,
+    });
+    //toast提示
+    if (this.data.isCollect) {
+      // 保存在缓存中
+      let collectList = wx.getStorageSync('collect') || [];
+      collectList.push(this.data.goodsData);
+      wx.setStorageSync('collect', collectList);
+      //toast样式激活
+      showToast({ title: '收藏成功', icon: 'success' });
+    } else {
+      // 取消保存在缓存中
+      let collectList = wx.getStorageSync('collect') || [];
+      let index = collectList.findIndex(item => {
+        return this.data.goods_id === item.goods_id;
+      });
+      collectList.splice(index, 1);
+      wx.setStorageSync('collect', collectList);
+      //toast样式激活
+      showToast({ title: '取消收藏', icon: 'success' });
+    }
+  },
+  handleCollectGoods(id) {
+    let collectList = wx.getStorageSync('collect') || [];
+    let isCollect = collectList.some(item => Number(id) === item.goods_id);
+    this.setData({
+      isCollect,
     });
   },
 });

@@ -1,2 +1,22 @@
-<!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
+<!-- pages/collect/collect.wxml -->
+<z-tab-bar tabList="{{tabList}}" bind:tabItemChange="handleTabItemChange">
+  <view class="tag">
+    <view class="active">全部</view>
+    <view>正在热卖</view>
+    <view>即将上线</view>
+  </view>
+  <block wx:if="{{tabIndex === 0}}">
+    <block wx:for="{{collectList}}" wx:key="goods_id">
+      <z-pay-item cartItem="{{item}}" bind:checkchange="handleCheckItem" bind:countchange="handleCountChange"></z-pay-item>
+    </block>
+  </block>
+  <block wx:elif="{{tabIndex === 1}}">
+    <view>暂时无数据</view>
+  </block>
+  <block wx:elif="{{tabIndex === 2}}">
+    <view>暂时无数据</view>
+  </block>
+  <block wx:else="{{tabIndex === 3}}">
+    <view>暂时无数据</view>
+  </block>
+</z-tab-bar>

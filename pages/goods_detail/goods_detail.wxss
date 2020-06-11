@@ -60,6 +60,10 @@ page {
   font-size: 28rpx;
 }
 
+.info .desc .collect-active .iconfont {
+  color: #ff3f78;
+}
+
 .image-info .title {
   font-size: 32rpx;
   color: var(--themeColor);

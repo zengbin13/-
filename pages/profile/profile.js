@@ -6,6 +6,7 @@ Page({
   data: {
     userInfo: {},
     isLogin: false,
+    CollectGoodsCount: 0,
   },
 
   /**
@@ -13,11 +14,15 @@ Page({
    */
   onShow: function (options) {
     const userInfo = wx.getStorageSync('userInfo');
+    const collect = wx.getStorageSync('collect') || [];
+
     if (userInfo) {
       this.setData({
         userInfo,
         isLogin: true,
+        CollectGoodsCount: collect.length,
       });
     }
+    //处理收藏产品数
   },
 });
