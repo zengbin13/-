@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "z-tab-bar": "/components/z-tab-bar/z-tab-bar",
+    "z-img-up": "/components/z-img-up/z-img-up"
+  },
+  "navigationBarTitleText": "意见反馈"
 }

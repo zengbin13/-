@@ -7,14 +7,27 @@ Page({
    */
   data: {
     searchText: '',
+    searchList: [],
+    isFoucs: false,
   },
-  debounceInput: () => debounce(this.getSearchData, 5000),
+  //定时器
+  timer: 0,
   handleInput(e) {
     let searchText = e.detail.value.trim();
+    if (!searchText) {
+      this.handleCancel();
+      return;
+    }
     this.setData({
       searchText,
+      isFoucs: true,
     });
-    this.debounceInput();
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.timer = setTimeout(() => {
+      this.getSearchData();
+    }, 1000);
   },
   async getSearchData() {
     let res = await request({
@@ -23,7 +36,16 @@ Page({
         query: this.data.searchText,
       },
     });
-    console.log(res);
+    this.setData({
+      searchList: res.data.message,
+    });
+  },
+  handleCancel() {
+    this.setData({
+      searchText: '',
+      searchList: [],
+      isFoucs: false,
+    });
   },
   /**
    * 生命周期函数--监听页面加载

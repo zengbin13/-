@@ -65,7 +65,7 @@
           <text>联系客服</text>
           <text class="pull-right">400-618-4000</text>
         </navigator>
-        <navigator url="" class="user-item">
+        <navigator url="/pages/feedback/feedback" class="user-item">
           <view>意见反馈</view>
         </navigator>
         <navigator url="" class="user-item">

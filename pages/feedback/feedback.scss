@@ -1,0 +1,52 @@
+/* pages/feedback/feedback.wxss */
+page {
+  background-color: #eee;
+}
+.fd-main {
+  padding: 20rpx;
+  color: #666;
+  .title {
+    margin: 10rpx;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text {
+      width: 30%;
+      box-sizing: border-box;
+      padding: 10rpx;
+      margin: 10rpx 0;
+      text-align: center;
+      background-color: #fff;
+    }
+  }
+  .content {
+    background-color: #fff;
+    margin-top: 30rpx;
+    .tool {
+      display: flex;
+      justify-content: start;
+      flex-wrap: wrap;
+      button {
+        width: 90rpx;
+        height: 90rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10rpx;
+        color: #666;
+        background-color: rgba(221, 221, 221, 0.863);
+      }
+    }
+  }
+  .form {
+    margin-top: 30rpx;
+    button {
+      width: 150rpx;
+      float: right;
+      color: #ff3f78;
+      border: 1px solid #ff3f78;
+    }
+  }
+}

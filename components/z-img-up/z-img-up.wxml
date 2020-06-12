@@ -1,0 +1,5 @@
+<!-- components/z-img-up/z-img-up.wxml -->
+<view class="img-up">
+  <image src="{{imgUrl}}" mode="scaleToFill" bindload=""></image>
+  <icon type="cancel" size="23" color="red" ></icon>
+</view>        

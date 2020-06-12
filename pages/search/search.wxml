@@ -1,5 +1,14 @@
 <!-- pages/search/search.wxml -->
-<view class="search">
-  <input placeholder="请输入你想要的商品" confirm-type="search" focus="{{true}}" bindinput="handleInput"></input>
-  <view class="btn">取消</view>
+<view class="search-wrap">
+  <view class="search">
+    <input placeholder="请输入你想要的商品" confirm-type="search" focus="{{true}}" bindinput="handleInput" value="{{searchText}}"></input>
+    <view class="btn" hidden="{{!isFoucs}}" bind:tap="handleCancel">取消</view>
+  </view>
+  <view class="search-content">
+    <block wx:for="{{searchList}}" wx:key="goods_id">
+      <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" hover-class="navigator-hover">
+        <view class="search-item">{{item.goods_name}}</view>
+      </navigator>
+    </block>
+  </view>
 </view>

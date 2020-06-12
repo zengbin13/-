@@ -3,15 +3,20 @@ page {
   background-color: #f0f0f0;
 }
 
+.search-wrap {
+  padding: 0 30rpx;
+}
+
 .search {
   display: flex;
   height: 60rpx;
-  margin: 20rpx 30rpx;
+  margin: 20rpx 0;
 }
 
 .search input {
   flex: 1;
   height: 100%;
+  padding-left: 30rpx;
   box-sizing: border-box;
   display: block;
   border-radius: 10rpx;
@@ -26,4 +31,16 @@ page {
   border: 1px solid #000;
   border-radius: 10rpx;
   background-color: #fff;
+}
+
+.search-item {
+  font-size: 32rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 20rpx;
+  margin-bottom: 4rpx;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
